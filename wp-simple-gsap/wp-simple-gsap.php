@@ -128,6 +128,10 @@ class WP_GSAP_Block_Plugin {
         echo '<div id="gsap-custom-cursor" style="display:none;"></div>';
     }
 
+    public function enqueue_editor_assets() {
+        // Fix for missing callback error
+    }
+
     public function enqueue_frontend_assets() {
         if (is_admin()) return;
 
