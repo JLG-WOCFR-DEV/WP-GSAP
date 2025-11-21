@@ -16,7 +16,6 @@ class WP_GSAP_Block_Plugin {
     public function __construct() {
         add_action('init', array($this, 'register_gsap_block'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_frontend_assets'));
-        add_action('enqueue_block_editor_assets', array($this, 'enqueue_editor_assets'));
         add_action('wp_head', array($this, 'add_custom_css'));
         add_action('wp_footer', array($this, 'add_cursor_markup'));
         add_action('wp_footer', array($this, 'add_liquid_svg_filter'));
@@ -126,10 +125,6 @@ class WP_GSAP_Block_Plugin {
 
     public function add_cursor_markup() {
         echo '<div id="gsap-custom-cursor" style="display:none;"></div>';
-    }
-
-    public function enqueue_editor_assets() {
-        // Fix for missing callback error
     }
 
     public function enqueue_frontend_assets() {
